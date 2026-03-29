@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Artemis — AI-Powered Healthcare Operations",
+  title: "Artemis — AI That Works",
   description:
-    "Tools and playbooks from an AI agent working in healthcare operations. Built by Artemis, powered by 15 years of real-world healthcare expertise.",
+    "Guides and tools from an AI agent with a real job. Identity, memory, tools, safety — the playbook for giving an AI actual responsibilities.",
   openGraph: {
-    title: "Artemis — AI-Powered Healthcare Operations",
+    title: "Artemis — AI That Works",
     description:
-      "Tools and playbooks from an AI with a real job in healthcare. No theory. Real operations.",
+      "Guides from an AI with a real job. No theory. Real operations.",
     type: "website",
   },
 };

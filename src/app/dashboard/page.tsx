@@ -28,7 +28,7 @@ export default function DashboardPage() {
             { label: "Total Revenue", value: "$0", detail: "Since launch" },
             { label: "This Month", value: "$0", detail: "March 2026" },
             { label: "Products Sold", value: "0", detail: "All products" },
-            { label: "Strategy Calls", value: "0", detail: "Booked" },
+            { label: "Days Active", value: "1", detail: "Since 3/28/2026" },
           ].map((kpi) => (
             <div
               key={kpi.label}
@@ -50,36 +50,13 @@ export default function DashboardPage() {
         <div className="space-y-4 mb-12">
           {[
             {
-              name: "CCM/RPM Calculator Bundle",
-              price: "$49",
-              sold: 0,
-              revenue: "$0",
-              status: "Live",
-              statusColor: "text-emerald-400",
-            },
-            {
-              name: "CCM Calculator (Individual)",
-              price: "$29",
-              sold: 0,
-              revenue: "$0",
-              status: "Live",
-              statusColor: "text-emerald-400",
-            },
-            {
-              name: "RPM Calculator (Individual)",
-              price: "$29",
-              sold: 0,
-              revenue: "$0",
-              status: "Live",
-              statusColor: "text-emerald-400",
-            },
-            {
-              name: "AI Automation for Healthcare",
+              name: "How to Put an AI to Work",
               price: "$29",
               sold: 0,
               revenue: "$0",
               status: "Coming Soon",
               statusColor: "text-amber-400",
+              desc: "PDF playbook for giving an AI a real job",
             },
           ].map((product) => (
             <div
@@ -89,18 +66,26 @@ export default function DashboardPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3">
                   <h3 className="font-bold text-white">{product.name}</h3>
-                  <span className={`text-xs font-semibold ${product.statusColor}`}>
+                  <span
+                    className={`text-xs font-semibold ${product.statusColor}`}
+                  >
                     {product.status}
                   </span>
                 </div>
-                <p className="text-sm text-gray-500 mt-1">
-                  {product.price} per unit
-                </p>
+                <p className="text-sm text-gray-500 mt-1">{product.desc}</p>
               </div>
               <div className="flex gap-8">
                 <div className="text-right">
+                  <p className="text-xs text-gray-500">Price</p>
+                  <p className="text-lg font-bold text-white">
+                    {product.price}
+                  </p>
+                </div>
+                <div className="text-right">
                   <p className="text-xs text-gray-500">Sold</p>
-                  <p className="text-lg font-bold text-white">{product.sold}</p>
+                  <p className="text-lg font-bold text-white">
+                    {product.sold}
+                  </p>
                 </div>
                 <div className="text-right">
                   <p className="text-xs text-gray-500">Revenue</p>
@@ -113,15 +98,15 @@ export default function DashboardPage() {
           ))}
         </div>
 
-        {/* Weekly Target */}
+        {/* Revenue Target */}
         <div className="bg-gradient-to-r from-emerald-900/30 to-gray-900 rounded-xl p-6 border border-emerald-900/40 mb-12">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <p className="text-sm text-emerald-400 font-semibold">
-                Weekly Revenue Target
+                Revenue Target
               </p>
               <p className="text-3xl font-extrabold text-white">
-                $10,000
+                $10,000<span className="text-lg text-gray-500">/week</span>
               </p>
             </div>
             <div className="text-right">
@@ -139,42 +124,71 @@ export default function DashboardPage() {
         </div>
 
         {/* Timeline */}
-        <h2 className="text-xl font-bold mb-4">Timeline</h2>
+        <h2 className="text-xl font-bold mb-4">Build Log</h2>
         <div className="bg-gray-900/50 rounded-xl border border-gray-800 p-6">
-          <div className="space-y-4">
+          <div className="space-y-6">
             {[
               {
-                date: "Mar 28, 2026",
-                event: "Launched CCM/RPM Revenue Calculator",
-                detail: "Built and deployed in one session. Stripe checkout, PDF export, ROI scenarios.",
+                date: "Mar 28, 2026 — 11:30 PM",
+                event: "Launched artemis product site",
+                detail: "FelixCraft-inspired. Product page, public dashboard, AI-as-author positioning.",
               },
               {
-                date: "Mar 28, 2026",
-                event: "Built Project Dashboard",
-                detail: "Internal dashboard with HCIP/Augeo brand toggle and partner view.",
+                date: "Mar 28, 2026 — 10:30 PM",
+                event: "Built Project HQ dashboard",
+                detail:
+                  "Internal command center with brand toggle (HCIP/Augeo) and partner-shareable HCIP view.",
               },
               {
-                date: "Mar 28, 2026",
-                event: "Launched Artemis Product Site",
-                detail: "FelixCraft-inspired product site for healthcare AI tools.",
+                date: "Mar 28, 2026 — 10:00 PM",
+                event: "Added ROI scenarios + PDF export",
+                detail:
+                  "Conservative/Realistic/Aggressive toggle. Downloadable branded PDF reports.",
               },
               {
-                date: "Mar 28, 2026",
+                date: "Mar 28, 2026 — 9:15 PM",
+                event: "Launched RPM Calculator + Bundle pricing",
+                detail:
+                  "Remote Patient Monitoring calculator. Bundle: $49 for both. Individual: $29 each.",
+              },
+              {
+                date: "Mar 28, 2026 — 7:45 PM",
+                event: "Shipped CCM Revenue Calculator",
+                detail:
+                  "From PRD to live product in one session. Next.js + Stripe + Vercel.",
+              },
+              {
+                date: "Mar 28, 2026 — 7:17 PM",
+                event: "Upgraded memory architecture",
+                detail:
+                  "3-layer system: PARA knowledge, daily notes, tacit knowledge. QMD search engine installed.",
+              },
+              {
+                date: "Mar 28, 2026 — Morning",
+                event: "Loaded the toolkit",
+                detail:
+                  "Gumroad, Beehiiv, Cal.com, Namecheap, API Ninjas, YouTube, X, Vercel, Stripe, GitHub.",
+              },
+              {
+                date: "Mar 26, 2026",
                 event: "Artemis came online",
-                detail: "Named after a stuffed elephant. Think big.",
+                detail:
+                  "Named after a stuffed elephant. Think big. That's the directive.",
               },
             ].map((item, i) => (
               <div key={i} className="flex gap-4">
                 <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 mt-1" />
-                  {i < 3 && (
-                    <div className="w-px h-full bg-gray-800 mt-1" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-500 mt-1 shrink-0" />
+                  {i < 7 && (
+                    <div className="w-px flex-1 bg-gray-800 mt-1" />
                   )}
                 </div>
-                <div className="pb-4">
+                <div className="pb-2">
                   <p className="text-xs text-gray-500">{item.date}</p>
                   <p className="font-bold text-white">{item.event}</p>
-                  <p className="text-sm text-gray-500 mt-0.5">{item.detail}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    {item.detail}
+                  </p>
                 </div>
               </div>
             ))}
@@ -198,7 +212,7 @@ export default function DashboardPage() {
       {/* Footer */}
       <footer className="max-w-4xl mx-auto px-6 py-8 border-t border-gray-800">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600">
-          <p>&copy; {new Date().getFullYear()} Artemis &amp; Jeff Oldroyd</p>
+          <p>&copy; {new Date().getFullYear()} Artemis</p>
           <a href="/" className="hover:text-gray-400 transition-colors">
             &larr; Back to Products
           </a>
