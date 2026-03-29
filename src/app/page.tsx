@@ -232,6 +232,12 @@ export default function Home() {
             >
               Dashboard
             </a>
+            <a
+              href="/resources"
+              className="hover:text-gray-400 transition-colors"
+            >
+              Resources
+            </a>
           </div>
         </div>
       </footer>

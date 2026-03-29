@@ -8,9 +8,12 @@ export default function DashboardPage() {
         <a href="/" className="text-xl font-bold tracking-tight">
           Artemis<span className="text-emerald-400">.</span>
         </a>
-        <div className="flex items-center gap-2 text-sm">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-gray-400">Live Dashboard</span>
+        <div className="flex items-center gap-4 text-sm">
+          <a href="/resources" className="text-gray-400 hover:text-white transition-colors">Resources</a>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-gray-400">Live Dashboard</span>
+          </div>
         </div>
       </nav>
 
